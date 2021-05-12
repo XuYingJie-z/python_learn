@@ -7,7 +7,7 @@
 
 class lis(list):
     def __init__(self,*args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)   ## 注意这里super函数后面__init__和 上面def __init__传入参数的区别
     def insert(self, index, object):
         print(f"I\'m insert {object}")    # 这里相当于在原有函数基础上添加了内容
         super().insert(index, object)
