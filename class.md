@@ -1,6 +1,7 @@
 # 如何写class
 
-* 1.利用super函数调用父类方法，然后在此基础上添加其他内容 <br>
+### 1.利用super函数调用父类方法，然后在此基础上添加其他内容 <br>
+
 例：重写一个list类
 
 ```python
@@ -28,3 +29,16 @@ I'm insert 2
 0
 ```
 
+### 类中的参数传递
+
+直接看代码
+
+```python
+class example:
+    def __init__(self,value):
+        # value要在实例化类的时候传入,此处如果不将value传递给self.value的话，后续再定义的函数是无法调用value这个值的
+        self.value = value
+    def sum_d(self):
+        return self.value **2   # 此处若是写成value ** 2的话会报错，显示value未定义
+
+```
