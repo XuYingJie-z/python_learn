@@ -124,7 +124,7 @@ print(re.match(password_pattern, pass3))
 
 3、re.match（pattern，string，flags = 0 ）
 
-如果字符串开头的零个或多个字符与正则表达式模式匹配，则返回相应的匹配对象。None如果字符串与模式不匹配，则返回；否则返回false。请注意，这与零长度匹配不同。
+如果字符串**开头**的零个或多个字符与正则表达式模式匹配，则返回相应的匹配对象。None如果字符串与模式不匹配，则返回；否则返回false。请注意，这与零长度匹配不同。
 
 ```python
 # 同search,不过在字符串开始处进行匹配，只会匹配一个对象
@@ -139,7 +139,7 @@ print(re.match(password_pattern, pass3))
 
 4、re.fullmatch（pattern，string，flags = 0 ）
 
-如果整个字符串与正则表达式模式匹配，则返回相应的match对象。None如果字符串与模式不匹配，则返回；否则返回false。请注意，这与零长度匹配不同。
+如果**整个字符串**与正则表达式模式匹配，则返回相应的match对象。None如果字符串与模式不匹配，则返回；否则返回false。请注意，这与零长度匹配不同。
 
 ```python
 >>> re.fullmatch('\w+','abcade').group()
@@ -172,7 +172,11 @@ print(re.match(password_pattern, pass3))
 
 >>> re.split(r'(\W+)', '...words, words...')
 ['', '...', 'words', ', ', 'words', '...', '']
-
+a = '135-688-251'
+re.findall(r'(135)-([6-9]+)', a)
+out:   [('135', '688')]  ## 匹配括号里的内容
+re.findall(r'([1-9]+)', a)
+out:   ['135', '688', '251']
 ```
 
 6、re.findall（pattern，string，flags = 0 ）
